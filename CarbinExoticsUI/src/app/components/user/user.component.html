@@ -1,0 +1,65 @@
+<div class="center-content">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Carbine Exotics</mat-card-title>
+      <mat-card-subtitle>Login & Register</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-tab-group animationDuration="1000ms">
+        <mat-tab label="Login">
+          <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Email Address:</mat-label>
+              <input type="email" matInput placeholder="Email" value=" " formControlName="email">
+              <mat-icon matSuffix>email</mat-icon>
+              <mat-error *ngIf="f['email'].hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Password:</mat-label>
+              <input type="password" matInput placeholder=" " formControlName="password">
+              <mat-icon matSuffix>vpn_key</mat-icon>
+            </mat-form-field>
+            <button mat-button color="accent">Login</button>
+          </form>
+        </mat-tab>
+        <mat-tab label="Register">
+          <form [formGroup]="registerForm" (ngSubmit)="register(registerForm)">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Email Address:</mat-label>
+              <input type="email" matInput placeholder="Email" value=" " formControlName="email">
+              <mat-icon matSuffix>email</mat-icon>
+              <mat-error *ngIf="f['email'].hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Password:</mat-label>
+              <input type="password" matInput placeholder=" " formControlName="password">
+              <mat-icon matSuffix>vpn_key</mat-icon>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Confirm Password:</mat-label>
+              <input type="password" matInput placeholder=" " formControlName="confirmPassword">
+              <mat-icon matSuffix>vpn_key</mat-icon>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Full name:</mat-label>
+              <input type="text" matInput placeholder="Full name" formControlName="fullname">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Credit Card Number:</mat-label>
+              <input type="number" matInput placeholder="Credit Card Number" formControlName="creditCard">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Address:</mat-label>
+              <input type="text" matInput placeholder="Address" formControlName="address">
+            </mat-form-field>
+            <button mat-button color="accent">Register</button>
+          </form>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>

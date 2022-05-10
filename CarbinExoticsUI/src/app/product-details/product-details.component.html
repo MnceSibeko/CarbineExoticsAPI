@@ -1,0 +1,7 @@
+<h2>Car Details</h2>
+
+<div *ngIf="car">
+  <h3>{{ car.car_make }}</h3>
+  <h4>{{ car.car_price | currency }}</h4>
+  <p>{{ car.car_about }}</p>
+</div>
