@@ -1,0 +1,17 @@
+.image {
+    background-size: contain;
+    background-position: center;
+    width: auto;
+    height: 170px;
+    background-repeat: no-repeat;
+}
+
+.card {
+    box-shadow: none !important;
+    border: none;
+}
+
+.btn-primary{
+    margin-right: 4px;
+    background-color: #34495E;
+}

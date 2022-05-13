@@ -1,29 +1,11 @@
 <h2>Cars</h2>
 
-<div *ngFor="let Car of cars">
-
-  <h3>
-    <a [title]="Car.car_make + ' details'"
-      [routerLink]="['/cars', Car.car_id]">
-      {{ Car.car_make + ' ' + Car.car_model }}
-    </a>
-  </h3>
-  <p *ngIf="Car.car_image"><img src="{{ Car.car_image }}"></p>
-  <p *ngIf="Car.car_year"> Year : {{ Car.car_year }} </p>
-  <p *ngIf="Car.car_mileage"> Mileage: {{ Car.car_mileage }} km</p>
-  <p *ngIf="Car.car_price"> Price Listed: R {{ Car.car_price }} </p>
-  <p *ngIf="Car.car_color"> Color: {{ Car.car_color }} </p>
-  <!-- <p *ngIf="Car.car_transmission"> Transmission: {{ Car.car_transmission }} </p> -->
-  <!-- <p *ngIf="Car.car_about"> About Car : {{ Car.car_about }} </p> -->
-  <!-- <p *ngIf="Car.category_id"> Category Class: {{ Car.category_id }} </p> -->
-
-
-  <button type="button" (click)="watch()">
-    Watch
-  </button>
-
-  <button type="button" (click)="addToCart()">
-    Add to Cart
-  </button>
-
+<div class="car-card">
+  <div class="row mt-3">
+    <div class="col-3" *ngFor="let car of cars">
+      <div class="card">
+        <app-car-detail [car]="car" [isDetail]="false"></app-car-detail>
+      </div>
+    </div>
+  </div>
 </div>

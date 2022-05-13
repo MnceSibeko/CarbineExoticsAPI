@@ -1,0 +1,14 @@
+[
+    {
+      "type": "Truck Transport",
+      "price": 20700
+    },
+    {
+      "type": "Rail Freight",
+      "price": 16500
+    },
+    {
+      "type": "Air Transportation",
+      "price": 28500
+    }
+  ]

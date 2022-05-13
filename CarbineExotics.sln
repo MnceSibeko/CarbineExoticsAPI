@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarbineExotics", "CarbineEx
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CarbinExoticsUI", "CarbinExoticsUI\", "{A3F3C0B1-E31A-4DE2-B796-2F2CFF3D5793}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_55839"
 		Debug.AspNetCompiler.PhysicalPath = "CarbinExoticsUI\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55839\"

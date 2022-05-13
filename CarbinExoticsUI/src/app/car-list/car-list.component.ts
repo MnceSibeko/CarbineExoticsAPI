@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { cars } from '../cars';
+import { CarService } from '../car.service';
+import { Car } from '../cars';
 
 @Component({
   selector: 'app-car-list',
@@ -8,9 +9,11 @@ import { cars } from '../cars';
 })
 export class CarListComponent implements OnInit {
 
-  cars = cars;
+  cars: Car[] | undefined;
 
-  constructor() { }
+  constructor(
+    private carService: CarService
+  ) { }
 
   watch() {
     window.alert('Car added to watch list, You will be notified if the car has been sold!');
@@ -20,6 +23,10 @@ export class CarListComponent implements OnInit {
     window.alert('Car has been added to Cart!');
   }
   ngOnInit(): void {
+    this.carService.getCars().subscribe((cars: any) => {
+      this.cars = cars;
+      console.log('cars', this.cars);
+    })
   }
 
 }

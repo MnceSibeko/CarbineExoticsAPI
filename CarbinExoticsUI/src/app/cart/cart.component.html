@@ -1,1 +1,40 @@
-<p>cart works!</p>
+<h3>Cart</h3>
+
+<p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p>
+
+<div class="cart-item" *ngFor="let Car of cars">
+  <span>{{ Car.car_Make + ' ' + Car.car_Model + ' - ' }}</span>
+  <span>{{ Car.car_Price | currency: 'R ' }}</span>
+</div>
+
+<p class="text-right">
+  <strong class="d-block">Total Amount:</strong>
+  <span class="d-block">{{totalAmount | currency:'R '}}</span>
+</p>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <div class="formGroup">
+    <label for="email">
+      Email: 
+    </label>
+    <input id="email" type="text" formControlName="email">
+  </div>
+
+  <div class="formGroup">
+    <label for="fullname">
+      Fullname:    
+    </label>
+    <input id="fullname" type="text" formControlName="fullname">
+  </div>
+
+  <div class="formGroup">
+    <label for="address">
+      Address: 
+    </label>
+    <input id="address" type="text" formControlName="address">
+  </div>
+  
+  <button class="btn btn-primary" type="submit">Purchase</button>
+</form>

@@ -27,12 +27,12 @@ namespace CarbineExotics.Controllers
 
         /*-------------------------------------------------------------------------------------------------*/
 
-        [HttpGet("{carUnique_id}")]
-        public async Task<ActionResult<Car>> Get(string carUnique_id)
+        [HttpGet("{Car_ID}")]
+        public async Task<ActionResult<Car>> Get(int Car_ID)
         {
-            /*Get() All the cars saved in the Database by string car_id*/
-
-            var car = await _context.Cars.FindAsync(carUnique_id);
+            /*Get() All the cars saved in the Database by int car_id*/
+            
+            var car = await _context.Cars.FindAsync(Car_ID);
             if (car == null)
             {
                 return BadRequest("Car not found!");
@@ -60,7 +60,7 @@ namespace CarbineExotics.Controllers
         {
             /*UPDATE Cars in DB by ID*/
 
-            var dbCars = await _context.Cars.FindAsync(request.CarUnique_ID);
+            var dbCars = await _context.Cars.FindAsync(request.Car_ID);
             if (dbCars == null)
             {
                 return BadRequest("Car not found!");
@@ -86,12 +86,12 @@ namespace CarbineExotics.Controllers
 
         /*-------------------------------------------------------------------------------------------------*/
 
-        [HttpDelete("{carUnique_id}")]
-        public async Task<ActionResult<List<Car>>> DeleteCar(string carUnique_id)
+        [HttpDelete("{Car_ID}")]
+        public async Task<ActionResult<List<Car>>> DeleteCar(int Car_ID)
         {
             /*DELETE by ID*/
 
-            var dbCar = await _context.Cars.FindAsync(carUnique_id);
+            var dbCar = await _context.Cars.FindAsync(Car_ID);
             if (dbCar == null)
             {
                 return BadRequest("Car not found!");
