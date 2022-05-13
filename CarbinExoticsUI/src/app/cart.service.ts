@@ -14,7 +14,7 @@ export class CartService {
   constructor(
     private http: HttpClient
   ) {
-    let cartItems;     
+    let cartItems = [];     
     let json = localStorage.getItem(this.cartItemStorage);
     
     if (json) 
