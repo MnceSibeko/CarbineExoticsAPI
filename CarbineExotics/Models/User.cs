@@ -10,16 +10,16 @@ namespace CarbineExotics.Models
         public int User_ID { get; set; }
 
         public string Email { get; set; } = string.Empty;
-        
-        //[JsonIgnore] //JWT
-        public string User_Password { get; set; } = string.Empty;
 
-        public string User_FullName { get; set; } = string.Empty;
-
-        public int User_CreditCard_No { get; set; }
-
-        public string User_Address { get; set; } = string.Empty; 
+        public string Password { get; set; } = string.Empty;
         
-        
+        public string FullName { get; set; } = string.Empty;
+
+        public int CreditCard { get; set; }
+
+        public string Address { get; set; } = string.Empty;
+
+
     }
+
 }

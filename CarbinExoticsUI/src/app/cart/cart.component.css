@@ -1,6 +1,8 @@
 .btn-primary{
     background-color: #34495E;
     margin-top: 20px;
+    margin-left: 5px;
+    margin-bottom: 5px;
 }
 
 .formGroup{

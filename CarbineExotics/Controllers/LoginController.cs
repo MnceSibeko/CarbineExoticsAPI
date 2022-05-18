@@ -23,7 +23,7 @@ namespace CarbineExotics.Controllers
         [HttpPost]
         public ActionResult Login(Login login)
         {
-            var user = _dataContext.Users.Where(u => u.Email == login.User_Email && u.User_Password == login.User_Password).FirstOrDefault();
+            var user = _dataContext.Users.Where(u => u.Email == login.Email && u.Password == login.Password).FirstOrDefault();
 
             
 

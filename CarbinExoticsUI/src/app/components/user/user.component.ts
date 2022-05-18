@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ConfirmedValidator } from 'src/app/helpers';
+import { UserService } from 'src/app/user.service';
 
 @Component({
   selector: 'app-user',
@@ -22,7 +24,9 @@ export class UserComponent implements OnInit {
     address: new FormControl('')
   });
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private userService : UserService
+    ) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -37,6 +41,9 @@ export class UserComponent implements OnInit {
       fullname: ['', [Validators.required]],
       creditCard: ['', [Validators.required, Validators.maxLength(10)]],
       address: ['', [Validators.required]]
+    },
+    {
+      // validator: ConfirmedValidator('password', 'confirmPassword')
     });
   }
 
@@ -45,15 +52,23 @@ export class UserComponent implements OnInit {
 
   register(data: any){
     console.log(data);
-
   }
 
   login(data: any){
     console.log(data);
+    this.userService.login(data).subscribe( x => {
+      sessionStorage.setItem('jwt', x.token);
+    })
+  }
+
+  createUser(data: any){
+    console.log(data);
+    this.userService.createUser(data).subscribe(x => {
+      console.log(x);
+    })
   }
 
   get f() {
     return this.loginForm.controls;
   }
-
 }

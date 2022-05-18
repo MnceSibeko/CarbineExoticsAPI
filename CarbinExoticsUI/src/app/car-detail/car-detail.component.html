@@ -1,16 +1,3 @@
-<!-- <div *ngIf="car">
-    <h4>{{ car.car_price | currency: 'R ' }}</h4>
-    <p *ngIf="car.car_image"><img src="{{ car.car_image }}"></p>
-    <h3>{{ car.car_make + ' ' + car.car_model }}</h3>
-    <p *ngIf="car.car_about"> About Car : {{ car.car_about }} </p>
-    <p *ngIf="car.category_id"> Category Class: {{ car.category_id }} </p>
-    <p *ngIf="car.car_year"> Year : {{ car.car_year }} </p>
-    <p *ngIf="car.car_mileage"> Mileage: {{ car.car_mileage }} km</p>
-    <p *ngIf="car.car_color"> Color: {{ car.car_color }} </p>
-    <p *ngIf="car.car_transmission"> Transmission: {{ car.car_transmission }} </p>
-
-  </div> -->
-  
   <div class="card">
     <div class="image" [ngStyle]="{'background-image': 'url('+car?.car_Image +')'}"></div>
     <div class="card-body">
@@ -25,9 +12,9 @@
       
       <ng-template #other_content>
         <p class="card-text">{{ car?.car_About }}</p>
-        <h5 class="card-title">{{ 'Mileage(km) : ' + car?.car_Mileage}}</h5>
+        <h5 class="card-title">{{ 'Mileage(km) : ' + car?.car_ID}}</h5>
         <h5 class="card-title">{{ 'Color : ' + car?.car_Color}}</h5>
-        <button class="btn btn-primary" type="button" (click)="addToCart(car)">Add To Cart</button>
+        <button class="btn btn-primary" type="button" (click)="addToCart(car)">Book test Drive</button>
         <button class="btn btn-primary" type="button" (click)="watch()">🔍</button>
       </ng-template>
 

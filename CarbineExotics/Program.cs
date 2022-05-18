@@ -18,11 +18,9 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(MyAllowSpecificOrigins,
-                          policy =>
-                          {
-                              policy.WithOrigins("*")
-                                                  .AllowAnyHeader()
-                                                  .AllowAnyMethod();
+                          policy => { policy.WithOrigins("*")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod();
                           });
 });
 
@@ -62,6 +60,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+var supportedCultures = new[] { "en-ZA" };
+var localizationOptions =
+    new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0])
+    .AddSupportedCultures(supportedCultures)
+    .AddSupportedUICultures(supportedCultures);
+
+app.UseRequestLocalization(localizationOptions);
 
 app.UseHttpsRedirection();
 

@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FormBuilder } from '@angular/forms';
 import { Car } from '../cars';
+import { BehaviorSubject } from 'rxjs';
+import { BookingService } from '../booking.service';
+import { __values } from 'tslib';
+
 
 @Component({
   selector: 'app-cart',
@@ -12,23 +16,27 @@ export class CartComponent implements OnInit {
 
   cars: Car[] = [];
   totalAmount: any; //!
+  cart = new BehaviorSubject<Car[]>([]);
 
-  checkoutForm = this.formBuilder.group({
+
+  bookingForm = this.formBuilder.group({
     email: '',
     fullname: '',
-    address: ''
+    address: '',
+    carId: '',
   });
+  showForm: boolean;
 
   constructor(  
     private cartService: CartService,
     private formBuilder: FormBuilder,
+    private bookingService: BookingService
   ) { }
 
   onSubmit(){
-    // this.cars = this.cartService.clearCart();
-    console.warn('Your order has been submitted. Please await for confirmation via email', 
-    this.checkoutForm.value);
-    this.checkoutForm.reset();
+    console.warn('Your booking has been submitted. Please await for confirmation via email', 
+    this.bookingForm.value);
+    this.bookingForm.reset();
   }
 
   
@@ -36,9 +44,26 @@ export class CartComponent implements OnInit {
     console.log(
     this.cartService.cart.value
     );
-    //this.totalAmount = this.cartService.getTotalPrice();
     this.cars = this.cartService.cart.value;
     this.totalAmount = this.cartService.getTotalPrice();
   }
 
+  clearBookingForm(){
+   //Code to clear cart
+   this.showForm = false;
+  }
+
+  booking(carId: any){
+    this.showForm = true;
+    this.bookingForm.controls['carId'].setValue(carId);
+  }
+
+  submit(data: any){
+    console.log(data);
+    // this.bookingService.submit(data).subscribe(x => {
+    //   console.log(x);
+    // })
+    this.showForm = false;
+    window.alert('Your booking has been submitted. Please await for confirmation via email');
+  }
 }

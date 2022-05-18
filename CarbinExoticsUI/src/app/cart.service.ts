@@ -39,7 +39,7 @@ export class CartService {
 
   //Remove all items from cart
   clearCart() {
-    // return this.cart;
+    return this.cart;
   }
 
   getShippingPrices() {

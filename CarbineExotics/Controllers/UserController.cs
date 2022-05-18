@@ -43,14 +43,14 @@ namespace CarbineExotics.Controllers
         /*-------------------------------------------------------------------------------------------------*/
 
         [HttpPost]
-        public async Task<ActionResult<List<User>>> AddUser(User user)
+        public async Task<ActionResult<string>> AddUser(User user)
         {
-            /*Show All Users*/
+            /*Registering users*/
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Users.ToListAsync());
+            return Ok("You have been successfull regsitered");
         }
 
         /*-------------------------------------------------------------------------------------------------*/
@@ -66,10 +66,10 @@ namespace CarbineExotics.Controllers
             }
 
             dbUser.Email = request.Email;
-            dbUser.User_Password = request.User_Password;
-            dbUser.User_FullName = request.User_FullName;
-            dbUser.User_CreditCard_No = request.User_CreditCard_No;
-            dbUser.User_Address = request.User_Address;
+            dbUser.Password = request.Password;
+            dbUser.FullName = request.FullName;
+            dbUser.CreditCard = request.CreditCard;
+            dbUser.Address = request.Address;
 
             await _context.SaveChangesAsync();
 

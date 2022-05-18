@@ -21,6 +21,8 @@ import { RouterModule } from '@angular/router';
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
+import { UserService } from './user.service';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -33,7 +35,7 @@ import { ShippingComponent } from './shipping/shipping.component';
     CarListComponent,
     ProductDetailsComponent,
     CarDetailComponent,
-    ShippingComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserModule,
@@ -48,9 +50,10 @@ import { ShippingComponent } from './shipping/shipping.component';
     MatIconModule,
     MatToolbarModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDatepickerModule
   ],
-  providers: [],
+  providers: [ UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

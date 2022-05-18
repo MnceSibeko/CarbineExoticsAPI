@@ -31,10 +31,10 @@ namespace CarbineExotics.Controllers
             /*-------------------------------------------------------------------------------------------------*/
 
             [HttpGet("{car_id}")]
-            public async Task<ActionResult<Car_Image>> Get(string carUnique_id)
+            public async Task<ActionResult<Car_Image>> Get(int Car_ID)
             {
                 /*GET Car Images by ID*/
-                var car_image = await _context.Car_Images.FindAsync(carUnique_id);
+                var car_image = await _context.Car_Images.FindAsync(Car_ID);
                 if (car_image == null)
                 {
                     return BadRequest("Car Image not found!");

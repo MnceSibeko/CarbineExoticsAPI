@@ -18,7 +18,7 @@ export class CarDetailComponent implements OnInit {
 
   addToCart(car: any) {
     this.cartService.addToCart(car);
-    window.alert('Your product has been added to the cart!');
+    window.alert('Car has been booked for test drive, proceed to cart for confirmation!');
   }
 
   watch() {
@@ -28,5 +28,5 @@ export class CarDetailComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.car);
   }
-
+  
 }

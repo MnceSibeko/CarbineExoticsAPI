@@ -9,7 +9,7 @@ import { ShippingComponent } from './shipping/shipping.component';
 const routes: Routes = [
   { path: 'signin', component: UserComponent },
   {path: 'cars', component: CarListComponent},
-  { path: '', component: ProductDetailsComponent },
+  { path: '', component: CarListComponent },
   { path: 'cars/:car_ID', component: ProductDetailsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'shipping', component: ShippingComponent }
