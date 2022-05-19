@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfirmedValidator } from 'src/app/helpers';
 import { UserService } from 'src/app/user.service';
-import { CarListComponent } from 'src/app/car-list/car-list.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -27,7 +27,7 @@ export class UserComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private userService : UserService,
-    private carListComponenet : CarListComponent
+    private route: Router,
     ) { }
 
   ngOnInit(): void {
@@ -60,6 +60,7 @@ export class UserComponent implements OnInit {
     console.log(data);
     this.userService.login(data).subscribe( x => {
       sessionStorage.setItem('jwt', x.token);
+      this.route.navigateByUrl('/cars')
     })
   }
 
