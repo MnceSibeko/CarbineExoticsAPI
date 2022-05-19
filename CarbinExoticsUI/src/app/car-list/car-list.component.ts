@@ -20,7 +20,7 @@ export class CarListComponent implements OnInit {
   }
 
   addToCart() {
-    window.alert('Car has been added to Cart!');
+    // window.alert('Car has been added to Cart!');
   }
   ngOnInit(): void {
     this.carService.getCars().subscribe((cars: any) => {

@@ -1,14 +1,27 @@
-.btn-primary{
-    background-color: #34495E;
+.btn-sm{
+    background-color: #125aa1;
     margin-top: 20px;
     margin-left: 5px;
     margin-bottom: 5px;
+    border-radius: 5px;
+    
+}
+
+.btn-sm:hover{
+  background-color: darkcyan;
 }
 
 .formGroup{
     margin-top: 10px;
 }
+  
+  .example-tooltip-red {
+    background: #c51313;
+  }
 
-/* .text-right{
-    align-content: center;
-} */
+.form-control{
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+  

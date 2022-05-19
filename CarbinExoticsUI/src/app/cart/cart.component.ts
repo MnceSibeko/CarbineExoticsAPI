@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { FormBuilder } from '@angular/forms';
 import { Car } from '../cars';
@@ -38,7 +38,6 @@ export class CartComponent implements OnInit {
     this.bookingForm.value);
     this.bookingForm.reset();
   }
-
   
   ngOnInit(){
     console.log(
@@ -51,6 +50,7 @@ export class CartComponent implements OnInit {
   clearBookingForm(){
    //Code to clear cart
    this.showForm = false;
+   this.totalAmount.reset();
   }
 
   booking(carId: any){
@@ -60,9 +60,9 @@ export class CartComponent implements OnInit {
 
   submit(data: any){
     console.log(data);
-    // this.bookingService.submit(data).subscribe(x => {
-    //   console.log(x);
-    // })
+    this.bookingService.submitBooking(data).subscribe(x => {
+      console.log(x);
+    })
     this.showForm = false;
     window.alert('Your booking has been submitted. Please await for confirmation via email');
   }

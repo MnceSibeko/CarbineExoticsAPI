@@ -18,7 +18,7 @@ export class CarDetailComponent implements OnInit {
 
   addToCart(car: any) {
     this.cartService.addToCart(car);
-    window.alert('Car has been booked for test drive, proceed to cart for confirmation!');
+    // window.alert('Car has been booked for test drive, proceed to cart for confirmation!');
   }
 
   watch() {

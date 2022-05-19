@@ -7,15 +7,15 @@
       <h5 class="card-title">{{ 'Transmission : ' + car?.car_Transmission}}</h5>
       <div *ngIf="!isDetail;else other_content">
         <p class="card-text d-inline-block text-truncate" style="max-width: 150px;max-height: 15rem;">{{ car?.car_About }}</p>
-        <a [routerLink]="['/cars', car?.car_ID]" class="btn btn-primary">See More</a>
+        <a [routerLink]="['/cars', car?.car_ID]" class="btn btn-primary btn-sm" matTooltip="Click to see more details about car">See More</a>
       </div>
       
       <ng-template #other_content>
         <p class="card-text">{{ car?.car_About }}</p>
         <h5 class="card-title">{{ 'Mileage(km) : ' + car?.car_ID}}</h5>
         <h5 class="card-title">{{ 'Color : ' + car?.car_Color}}</h5>
-        <button class="btn btn-primary" type="button" (click)="addToCart(car)">Book test Drive</button>
-        <button class="btn btn-primary" type="button" (click)="watch()">🔍</button>
+        <button class="btn btn-primary btn-sm" type="button" matTooltip="Click to book car for a test drive" (click)="addToCart(car)">Book test Drive</button>
+        <button class="btn btn-primary btn-sm" type="button" matTooltip="Click to add car to watch list" (click)="watch()">🔍</button>
       </ng-template>
 
     </div>

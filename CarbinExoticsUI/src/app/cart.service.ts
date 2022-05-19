@@ -7,6 +7,9 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
+  submit(data: any) {
+    throw new Error('Method not implemented.');
+  }
 
   private cartItemStorage: string = "cartItem";
   cart = new BehaviorSubject<Car[]>([]);

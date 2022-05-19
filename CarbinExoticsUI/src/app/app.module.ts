@@ -23,6 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ShippingComponent } from './shipping/shipping.component';
 import { UserService } from './user.service';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatToolbarModule,
     RouterModule,
     HttpClientModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatTooltipModule
   ],
   providers: [ UserService],
   bootstrap: [AppComponent]

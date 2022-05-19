@@ -11,7 +11,17 @@
     border: none;
 }
 
-.btn-primary{
+.card:hover{
+
+}
+
+.btn-sm{
     margin-right: 4px;
-    background-color: #34495E;
+    background-color: #8C8C8C;
+    border: none;
+}
+
+.btn-sm:hover{
+    background-color: #125aa1;
+    transition: 1000ms;
 }

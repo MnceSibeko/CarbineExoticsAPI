@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ConfirmedValidator } from 'src/app/helpers';
 import { UserService } from 'src/app/user.service';
+import { CarListComponent } from 'src/app/car-list/car-list.component';
 
 @Component({
   selector: 'app-user',
@@ -25,7 +26,8 @@ export class UserComponent implements OnInit {
   });
 
   constructor(private formBuilder: FormBuilder,
-    private userService : UserService
+    private userService : UserService,
+    private carListComponenet : CarListComponent
     ) { }
 
   ngOnInit(): void {

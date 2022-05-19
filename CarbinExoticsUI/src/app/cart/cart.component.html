@@ -4,12 +4,12 @@
   <a routerLink="/shipping">Shipping Prices</a>
 </p>
 
-<form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="bookingForm">
 
   <div class="cart-item" *ngFor="let car of cars">
     <span>{{ car.car_Make + ' ' + car.car_Model + ' - ' }}</span>
     <span>{{ car.car_Price | currency: 'R ' }}</span>
-    <button class="btn btn-primary" type="submit" (click)="booking(car.car_ID)">Confirm Booking</button>
+    <button class="btn btn-primary btn-sm" type="submit" (click)="booking(car.car_ID)">Confirm Booking</button>
   </div>
   
   <p class="text-right">
@@ -19,27 +19,22 @@
 
   <div *ngIf="showForm">
     <div class="formGroup">
-      <label for="email">
-        Email: 
-      </label>
-      <input id="email" type="text" formControlName="email">
+      <label for="email"> Email: </label>
+      <input id="email" class="form-control" type="email" aria-describedby="emailHelp" placeholder="Enter email address" formControlName="email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
   
     <div class="formGroup">
-      <label for="fullname">
-        Fullname:    
-      </label>
-      <input id="fullname" type="text" formControlName="fullname">
+      <label for="fullname"> Fullname: </label>
+      <input id="fullname" class="form-control" type="text" formControlName="fullname">
     </div>
   
     <div class="formGroup">
-      <label for="address">
-        Address: 
-      </label>
-      <input id="address" type="text" formControlName="address">
+      <label for="address"> Address: </label>
+      <input id="address" class="form-control" type="text" formControlName="address">
     </div>
-    <button class="btn btn-primary" type="button" (click)="clearBookingForm()">Clear Fields</button>
-    <button class="btn btn-primary" type="button" (click)="submit(bookingForm.value)">Submit</button>
+    <button class="btn btn-primary btn-sm" type="button" matTooltip="Clear all fields in the form & cart" matTooltipClass="example-tooltip-red" (click)="clearBookingForm()">Clear</button>
+    <button class="btn btn-primary btn-sm" type="button" matTooltip="Submit booking for email confirmation" (click)="submit(bookingForm.value)">Submit</button>
   </div>
 
 </form>

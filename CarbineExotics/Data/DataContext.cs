@@ -11,9 +11,10 @@ namespace CarbineExotics.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Car> Cars { get; set; }
-        //public DbSet<Cars> Car { get; set; }
         public DbSet<Car_Image> Car_Images { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<Category> Categories { get; set; }
+
+        public DbSet<Booking> Bookings { get; set; }
     }
 }

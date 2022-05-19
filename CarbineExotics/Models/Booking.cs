@@ -5,6 +5,8 @@ namespace CarbineExotics.Models
     public class Booking
     {
         [Key]
+        public int Booking_ID { get; set; }
+
         public int Car_ID { get; set; }
 
         public string Email { get; set; } = string.Empty;
