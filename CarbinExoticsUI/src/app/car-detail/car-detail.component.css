@@ -17,11 +17,11 @@
 
 .btn-sm{
     margin-right: 4px;
-    background-color: #8C8C8C;
+    background-color:#283747;
     border: none;
 }
 
 .btn-sm:hover{
-    background-color: #125aa1;
+    background-color: #2E86C1;
     transition: 1000ms;
 }

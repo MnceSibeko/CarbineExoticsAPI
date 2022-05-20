@@ -25,8 +25,6 @@ namespace CarbineExotics.Controllers
         {
             var user = _dataContext.Users.Where(u => u.Email == login.Email && u.Password == login.Password).FirstOrDefault();
 
-            
-
             if (user == null)
                 return BadRequest("Not a valid user.");
 
