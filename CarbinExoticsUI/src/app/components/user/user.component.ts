@@ -39,13 +39,13 @@ export class UserComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       email:['', [Validators.email, Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', Validators.required, Validators.minLength(6)],
+      confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
       fullname: ['', [Validators.required]],
       creditCard: ['', [Validators.required, Validators.maxLength(10)]],
       address: ['', [Validators.required]]
     },
     {
-      // validator: ConfirmedValidator('password', 'confirmPassword')
+      validator: ConfirmedValidator('password', 'confirmPassword')
     });
   }
 
@@ -73,5 +73,9 @@ export class UserComponent implements OnInit {
 
   get f() {
     return this.loginForm.controls;
+  }
+
+  get regForm() {
+    return this.registerForm.controls;
   }
 }

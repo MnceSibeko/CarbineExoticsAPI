@@ -50,7 +50,7 @@ namespace CarbineExotics.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return Ok("You have been successfull regsitered");
+            return Ok("You have been successfully registered");
         }
 
         /*-------------------------------------------------------------------------------------------------*/

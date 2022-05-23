@@ -13,20 +13,11 @@
         <p class="card-text">{{ car?.car_About }}</p>
         <h5 class="card-title">{{ 'Mileage(km) : ' + car?.car_ID}}</h5>
         <h5 class="card-title">{{ 'Color : ' + car?.car_Color}}</h5>
-        <button class="btn btn-primary btn-sm" type="button" matTooltip="Click to book car for a test drive" (click)="booking(car)">Book 📖 </button>
+        <button class="btn btn-primary btn-sm" type="button" matTooltip="Click to book car for a test drive" (click)="book(car?.car_ID)">Book 📖 </button>
         <button class="btn btn-primary btn-sm" type="button" matTooltip="Click to add car to watch list" (click)="addToCart(car)"> Watch 🔍</button>
       </ng-template>
 
       <form [formGroup]="bookingForm">
-        <div class="cart-item" *ngFor="let car of cars">
-          <span>{{ car.car_Make + ' ' + car.car_Model + ' - ' }}</span>
-          <span>{{ car.car_Price | currency: 'R ' }}</span>
-          <button class="btn btn-primary btn-sm" type="submit" (click)="booking(car.car_ID)">Confirm Booking</button>
-        </div>
-        <!-- <p class="text-right">
-          <strong class="d-block">Total Amount:</strong>
-          <span class="d-block">{{totalAmount | currency:'R '}}</span>
-        </p> -->
         <div *ngIf="showForm">
           <div class="formGroup">
             <label for="email"> Email: </label>
@@ -44,7 +35,7 @@
             <input id="address" class="form-control" type="text" formControlName="address">
           </div>
           <button class="btn btn-primary btn-sm" type="button" matTooltip="Clear all fields in the form & cart" matTooltipClass="example-tooltip-red" (click)="clearBookingForm()">Clear</button>
-          <button class="btn btn-primary btn-sm" type="button" matTooltip="Submit booking for email confirmation" (click)="submit(bookingForm.value)">Submit</button>
+          <button [routerLink]="['/signin']" routerLinkActive="router-link-active"  class="btn btn-primary btn-sm" type="button" matTooltip="Submit booking for email confirmation" (click)="submit(bookingForm.value)">Submit</button>
         </div>
       
       </form>

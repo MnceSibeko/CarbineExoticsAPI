@@ -31,7 +31,7 @@
               <mat-label>Email Address:</mat-label>
               <input type="email" matInput placeholder="Email" value=" " formControlName="email">
               <mat-icon matSuffix>email</mat-icon>
-              <mat-error *ngIf="f['email'].hasError('required')">
+              <mat-error *ngIf="regForm['email'].hasError('required')">
                 Email is <strong>required</strong>
               </mat-error>
             </mat-form-field>
@@ -44,6 +44,9 @@
             <mat-label>Confirm Password:</mat-label>
               <input type="password" matInput placeholder=" " formControlName="confirmPassword">
               <mat-icon matSuffix>vpn_key</mat-icon>
+              <mat-error *ngIf="regForm['confirmPassword'].hasError('confirmedValidator')">
+                Your password does not <strong>match</strong>
+              </mat-error>
             </mat-form-field>
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Full name:</mat-label>
@@ -51,7 +54,7 @@
             </mat-form-field>
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Credit Card Number:</mat-label>
-              <input type="number" matInput placeholder="Credit Card Number" formControlName="creditCard">
+              <input type="text" matInput placeholder="Credit Card Number" formControlName="creditCard">
             </mat-form-field>
             <mat-form-field class="example-full-width" appearance="fill">
               <mat-label>Address:</mat-label>

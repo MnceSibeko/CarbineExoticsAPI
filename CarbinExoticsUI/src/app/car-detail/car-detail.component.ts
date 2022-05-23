@@ -12,7 +12,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CarDetailComponent implements OnInit {
 
   @Input() car: Car | undefined;
-  cars: Car[] = [];
   @Input() isDetail: boolean = false;
   totalAmount: any;
   
@@ -41,7 +40,7 @@ export class CarDetailComponent implements OnInit {
       email: ['',[Validators.email, Validators.required]],
       fullname: ['',[Validators.required]],
       address: ['',[Validators.required]],
-      carId: ['',[Validators.required]],
+      car_ID: [this.car?.car_ID ,[Validators.required]],
     });
   }
 
@@ -52,14 +51,14 @@ export class CarDetailComponent implements OnInit {
    }
   
   onSubmit(){
-    console.warn('Your booking has been submitted. Please await for confirmation via email', 
-    this.bookingForm.value);
+    // console.warn('Your booking has been submitted. Please await for confirmation via email', 
+    // this.bookingForm.value);
     this.bookingForm.reset();
   }
 
-  booking(carId: any){
+  book(carId: any){
     this.showForm = true;
-    this.bookingForm.controls['carId'].setValue(carId);
+    this.bookingForm.controls['car_ID'].setValue(carId);
   }
 
   submit(data: any){
