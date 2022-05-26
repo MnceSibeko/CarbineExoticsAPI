@@ -60,7 +60,7 @@
               <mat-label>Address:</mat-label>
               <input type="text" matInput placeholder="Address" formControlName="address">
             </mat-form-field>
-            <button mat-button color="accent" (click)="createUser(registerForm.value)">Register</button>
+            <button [routerLink]="['/cars']" routerLinkActive="router-link-active"  mat-button color="accent" (click)="createUser(registerForm.value)">Register</button>
           </form>
         </mat-tab>
       </mat-tab-group>
