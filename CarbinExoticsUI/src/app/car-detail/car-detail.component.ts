@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Car } from '../cars';
 import { CartService } from '../cart.service';
 import { BookingService } from '../booking.service';
+import { NotificationService } from '../notification.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -18,7 +19,8 @@ export class CarDetailComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private bookingService: BookingService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private notifyService : NotificationService
   ) { }
 
   bookingForm = new FormGroup({});
@@ -26,6 +28,7 @@ export class CarDetailComponent implements OnInit {
 
   addToCart(car: any) {
     this.cartService.addToCart(car);
+    this.notifyService.showSuccess("Car added to watch list.")
     // window.alert('Car has been booked for test drive, proceed to cart for confirmation!');
   }
 
@@ -67,6 +70,7 @@ export class CarDetailComponent implements OnInit {
       console.log(x);
     })
     this.showForm = false;
-    window.alert('Your booking has been submitted. Please await for confirmation via email');
+    this.notifyService.showSuccess("Booking submitted! Please await for confirmation via email.")
+    // window.alert('Your booking has been submitted. Please await for confirmation via email');
   }
 }
