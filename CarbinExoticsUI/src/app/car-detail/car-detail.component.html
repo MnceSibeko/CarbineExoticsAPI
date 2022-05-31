@@ -13,8 +13,8 @@
         <p class="card-text">{{ car?.car_About }}</p>
         <h5 class="card-title">{{ 'Mileage(km) : ' + car?.car_ID}}</h5>
         <h5 class="card-title">{{ 'Color : ' + car?.car_Color}}</h5>
-        <button class="btn btn-primary btn-sm" type="button" matTooltip="Click to book car for a test drive" (click)="book(car?.car_ID)">Book 📖 </button>
-        <button class="btn btn-primary btn-sm" type="button" matTooltip="Click to add car to watch list" (click)="addToCart(car)"> Watch 🔍</button>
+        <button class="btn btn-primary btn-sm" type="button" matTooltip="Click to book car for a test drive" (click)="book(car?.car_ID)">Book test drive 📖 </button>
+        <button class="btn btn-primary btn-sm" type="button" matTooltip="Click to add car to watch list" (click)="addToCart(car)"> Add to Watch 💜</button>
       </ng-template>
 
       <form [formGroup]="bookingForm">

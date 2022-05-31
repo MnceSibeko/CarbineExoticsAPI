@@ -28,12 +28,12 @@ export class CarDetailComponent implements OnInit {
 
   addToCart(car: any) {
     this.cartService.addToCart(car);
-    this.notifyService.showSuccess("Car added to watch list.")
+    this.notifyService.showWarning("Car added to watch list. You will be notified if the car has been sold!" + "")
     // window.alert('Car has been booked for test drive, proceed to cart for confirmation!');
   }
 
   watch() {
-    window.alert('Car added to watch list, You will be notified if the car has been sold!');
+    window.alert('Car added to watch list, ');
   }
 
   ngOnInit(): void {
@@ -70,7 +70,7 @@ export class CarDetailComponent implements OnInit {
       console.log(x);
     })
     this.showForm = false;
-    this.notifyService.showSuccess("Booking submitted! Please await for confirmation via email.")
+    this.notifyService.showInfo("Booking submitted! Please await for confirmation via email.")
     // window.alert('Your booking has been submitted. Please await for confirmation via email');
   }
 }

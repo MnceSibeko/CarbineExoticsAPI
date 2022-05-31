@@ -5,6 +5,7 @@ import { Car } from '../cars';
 import { BehaviorSubject } from 'rxjs';
 import { BookingService } from '../booking.service';
 import { __values } from 'tslib';
+import { NotificationService } from '../notification.service';
 
 
 @Component({
@@ -30,12 +31,14 @@ export class CartComponent implements OnInit {
   constructor(  
     private cartService: CartService,
     private formBuilder: FormBuilder,
-    private bookingService: BookingService
+    private bookingService: BookingService,
+    private notifyService : NotificationService
   ) { }
 
   onSubmit(){
-    console.warn('Your booking has been submitted. Please await for confirmation via email', 
-    this.bookingForm.value);
+    this.notifyService.showSuccess("Test Drive booking submitted. Please await for confirmation via email.")
+    // console.warn('Your booking has been submitted. Please await for confirmation via email', 
+    this.bookingForm.value();
     this.bookingForm.reset();
   }
   
@@ -64,6 +67,7 @@ export class CartComponent implements OnInit {
       console.log(x);
     })
     this.showForm = false;
-    window.alert('Your booking has been submitted. Please await for confirmation via email');
+    this.notifyService.showSuccess("Test Drive booking submitted. Please await for confirmation via email.")
+    // window.alert('Your booking has been submitted. Please await for confirmation via email');
   }
 }

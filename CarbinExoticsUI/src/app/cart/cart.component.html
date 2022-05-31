@@ -14,18 +14,48 @@
   </g>
 </svg>
 
-<!-- <p>
-  <a routerLink="/shipping">Shipping Prices</a>
-</p> -->
-
 <form [formGroup]="bookingForm">
+  <table class="table-bordered table-light" *ngFor="let car of cars">
 
-  <div class="cart-item" *ngFor="let car of cars">
-    <span>{{ car.car_Make + ' ' + car.car_Model + ' - ' }}</span>
-    <span>{{ car.car_Price | currency: 'R ' }}</span>
-    <button class="btn btn-primary btn-sm" type="submit" (click)="booking(car.car_ID)">Confirm Booking</button>
-  </div>
-  
+    <thead class="text-muted">
+      <tr class="small text-uppercase">
+        <th scope="col" width="220">Image</th>
+        <th scope="col" width="180">Car Details</th>
+        <th scope="col" width="180">Price</th>
+        <th scope="col" class="text-right" width="200"> </th>
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr>
+        <td>
+          <figure class="itemside">
+              <div class="aside"><img src= {{car.car_Image}}></div>
+          </figure>
+      </td>
+
+      <td> 
+        <div class="price-wrap">  
+          <small class="text-muted"> {{car.car_Make + ' ' + car.car_Model}}</small><br>
+          <small class="text-muted">{{'Year: ' + car.car_Year}}</small><br>
+          <small class="text-muted"> {{'Transmission: ' + car.car_Transmission}}</small>
+        </div> 
+    </td>
+
+    <td> 
+      <div class="price-wrap"> 
+          <var class="price">{{ car.car_Price | currency: 'R ' }}</var><br>
+          <small class="text-muted">T's & C's apply</small> 
+      </div>
+  </td>
+
+  <td class="text-right"> 
+    <button class="btn btn-primary btn-sm" type="submit" (click)="booking(car.car_ID)">Book for test drive</button>
+  </td>
+  </tr>
+    </tbody>
+  </table>
+
   <p class="text-right">
     <strong class="d-block">Total Amount:</strong>
     <span class="d-block">{{totalAmount | currency:'R '}}</span>
@@ -50,5 +80,4 @@
     <button class="btn btn-primary btn-sm" type="button" matTooltip="Clear all fields in the form & cart" matTooltipClass="example-tooltip-red" (click)="clearBookingForm()">Clear</button>
     <button class="btn btn-primary btn-sm" type="button" matTooltip="Submit booking for email confirmation" (click)="submit(bookingForm.value)">Submit</button>
   </div>
-
 </form>

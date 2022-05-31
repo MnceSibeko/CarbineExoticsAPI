@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ConfirmedValidator } from 'src/app/helpers';
 import { UserService } from 'src/app/user.service';
 import { Router } from '@angular/router';
+import { NotificationService } from 'src/app/notification.service';
 
 @Component({
   selector: 'app-user',
@@ -28,6 +29,7 @@ export class UserComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
     private userService : UserService,
     private route: Router,
+    private notifyService : NotificationService
     ) { }
 
   ngOnInit(): void {
@@ -62,6 +64,7 @@ export class UserComponent implements OnInit {
       sessionStorage.setItem('jwt', x.token);
       this.route.navigateByUrl('/cars')
     })
+    this.notifyService.showSuccess("Successfuly logged in!")
   }
 
   createUser(data: any){
@@ -69,6 +72,7 @@ export class UserComponent implements OnInit {
     this.userService.createUser(data).subscribe(x => {
       console.log(x);
     })
+    this.notifyService.showSuccess("Registration succesful!")
   }
 
   get f() {
