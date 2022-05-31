@@ -22,7 +22,7 @@
         <th scope="col" width="220">Image</th>
         <th scope="col" width="180">Car Details</th>
         <th scope="col" width="180">Price</th>
-        <th scope="col" class="text-right" width="200"> </th>
+        <th scope="col" width="180">Actions</th>
       </tr>
     </thead>
     
@@ -50,7 +50,8 @@
   </td>
 
   <td class="text-right"> 
-    <button class="btn btn-primary btn-sm" type="submit" (click)="booking(car.car_ID)">Book for test drive</button>
+    <a href="/shipping"><small class="text-muted">Shipping pricelist</small></a><br>
+    <button class="btn btn-primary btn-sm" type="submit" (click)="booking(car.car_ID)">Book for test drive</button><br>
   </td>
   </tr>
     </tbody>
