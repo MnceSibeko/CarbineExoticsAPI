@@ -1,4 +1,9 @@
-﻿using CarbineExotics.Models;
+﻿/* Login Controller
+ * Author : Mncedisi Sibeko
+ * Copyright: © Mncedisi Sibeko 2022, All rights reserved.
+ * Description: Login function.  
+ */
+using CarbineExotics.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;

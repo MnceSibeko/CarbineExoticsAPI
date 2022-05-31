@@ -1,4 +1,9 @@
-﻿using CarbineExotics.Models;
+﻿/* Car Images Controller
+ * Author : Mncedisi Sibeko
+ * Copyright: © Mncedisi Sibeko 2022, All rights reserved.
+ * Description: Controller used to get car images from the database 
+ */
+using CarbineExotics.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

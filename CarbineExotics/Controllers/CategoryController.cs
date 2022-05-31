@@ -1,4 +1,9 @@
-﻿using CarbineExotics.Models;
+﻿/* Category Controller
+ * Author : Mncedisi Sibeko
+ * Copyright: © Mncedisi Sibeko 2022, All rights reserved.
+ * Description: Controller used to load categories from database to front end 
+ */
+using CarbineExotics.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

@@ -1,3 +1,9 @@
+/* Booking Controller
+ * Author : Mncedisi Sibeko
+ * Copyright: © Mncedisi Sibeko 2022, All rights reserved.
+ * Description: Controller used to manage bookings and save to database.
+ */
+
 using CarbineExotics.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

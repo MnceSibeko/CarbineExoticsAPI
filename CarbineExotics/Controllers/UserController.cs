@@ -1,4 +1,9 @@
-﻿using CarbineExotics.Models;
+﻿/* User Controller
+ * Author : Mncedisi Sibeko
+ * Copyright: © Mncedisi Sibeko 2022, All rights reserved.
+ * Description: Controller used to get User details from the database 
+ */
+using CarbineExotics.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

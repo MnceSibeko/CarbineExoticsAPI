@@ -1,4 +1,9 @@
-﻿using CarbineExotics.Models;
+﻿/* Car Controller
+ * Author : Mncedisi Sibeko
+ * Copyright: © Mncedisi Sibeko 2022, All rights reserved.
+ * Description: Controller used to get all car details from the database and push them to frontend. 
+ */
+using CarbineExotics.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
