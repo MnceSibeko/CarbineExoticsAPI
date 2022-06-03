@@ -72,7 +72,7 @@ export class UserComponent implements OnInit {
     this.userService.createUser(data).subscribe(x => {
       console.log(x);
     })
-    this.notifyService.showSuccess("Registration succesful!")
+    this.notifyService.showInfo("Registration succesful!")
   }
 
   get f() {
