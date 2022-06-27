@@ -2,8 +2,8 @@
     <div class="image" [ngStyle]="{'background-image': 'url('+car?.car_Image +')'}"></div>
     <div class="card-body">
       <h5 class="card-title">{{ car?.car_Make + ' ' + car?.car_Model }}</h5>
-      <h5 class="card-title">{{ car?.car_Price  | currency: 'R '}}</h5>
-      <h5 class="card-text">{{car?.car_Year}}</h5>
+      <h4 class="card-title"><strong>{{ car?.car_Price  | currency: 'R '}}</strong></h4>
+      <h5 class="card-text"><strong>{{car?.car_Year}}</strong></h5>
       <h5 class="card-title">{{ 'Transmission : ' + car?.car_Transmission}}</h5>
       <div *ngIf="!isDetail;else other_content">
         <p class="card-text d-inline-block text-truncate" style="max-width: 150px;max-height: 15rem;">{{ car?.car_About }}</p>

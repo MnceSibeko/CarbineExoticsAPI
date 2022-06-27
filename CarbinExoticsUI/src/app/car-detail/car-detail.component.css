@@ -4,6 +4,9 @@
     width: auto;
     height: 170px;
     background-repeat: no-repeat;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 .card {
@@ -22,7 +25,8 @@
 }
 
 .btn-sm{
-    margin-right: 4px;
+    margin-top: 10px;
+    margin-right: 30px;
     background-color:#283747;
     border: none;
 }

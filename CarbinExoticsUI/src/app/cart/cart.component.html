@@ -44,13 +44,12 @@
 
     <td> 
       <div class="price-wrap"> 
-          <var class="price">{{ car.car_Price | currency: 'R ' }}</var><br>
+          <var class="price"><strong>{{ car.car_Price | currency: 'R ' }}</strong></var><br>
           <small class="text-muted">T's & C's apply</small> 
       </div>
   </td>
 
   <td class="text-right"> 
-    <a href="/shipping"><small class="text-muted">Shipping pricelist</small></a><br>
     <button class="btn btn-primary btn-sm" type="submit" (click)="booking(car.car_ID)">Book for test drive</button><br>
   </td>
   </tr>

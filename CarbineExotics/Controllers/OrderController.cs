@@ -22,7 +22,7 @@ namespace CarbineExotics.Controllers
         {
             /*GET ALL Orders in the DB*/
 
-            return Ok(await _context.Orders.ToListAsync());
+            return Ok(await _context.Bookings.ToListAsync());
         }
 
         /*-------------------------------------------------------------------------------------------------*/
@@ -32,7 +32,7 @@ namespace CarbineExotics.Controllers
         {
             /*GET Order by ID*/
 
-            var order = await _context.Orders.FindAsync(order_id);
+            var order = await _context.Bookings.FindAsync(order_id);
             if (order == null)
             {
                 return BadRequest("Order not found!");
@@ -50,7 +50,7 @@ namespace CarbineExotics.Controllers
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
 
-            return Ok(await _context.Orders.ToListAsync());
+            return Ok(await _context.Bookings.ToListAsync());
         }
 
         /*-------------------------------------------------------------------------------------------------*/
